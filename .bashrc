@@ -10,7 +10,9 @@ HISTFILESIZE=2000
 
 shopt -s checkwinsize
 shopt -s cmdhist
-shopt -s globstar
+if $SHELL --version | awk '{ print $4 }' | grep -q -E '^4'; then
+    shopt -s globstar
+fi
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
