@@ -4,6 +4,11 @@
 export EDITOR=vim
 set -o vi
 
+export NVM_DIR=~/.nvm
+if which brew > /dev/null; then
+    source $(brew --prefix nvm)/nvm.sh
+fi
+
 HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 HISTSIZE=1000
