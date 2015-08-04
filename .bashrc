@@ -9,6 +9,10 @@ if which brew > /dev/null; then
     source $(brew --prefix nvm)/nvm.sh
 fi
 
+if [ -e ~/Applications/radare2/bin ]; then
+    export PATH=~/Applications/radare2/bin:${PATH}
+fi
+
 HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 HISTSIZE=1000
